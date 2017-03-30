@@ -1,0 +1,35 @@
+class Solution(object):
+    def findWords(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        answer=[]
+        for c in words:
+            tmp=c.lower()
+            #print tmp
+            if allinrow1(tmp) or allinrow2(tmp) or allinrow3(tmp):
+                answer.append(c)
+        print answer
+        return answer
+                
+        
+def allinrow1(words):
+    row1="qwertyuiop"
+    for c in words:
+        if c not in row1:
+            return False
+    return True
+def allinrow2(words):
+    row2="asdfghjkl" 
+    for c in words:
+        if c not in row2:
+            return False
+    return True        
+def allinrow3(words):
+    row3="zxcvbnm"
+    for c in words:
+        if c not in row3:
+            return False
+    return True        
+        
