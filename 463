@@ -1,0 +1,28 @@
+int islandPerimeter(int** grid, int gridRowSize, int gridColSize) {
+    int i,j;
+    int perimeter=0;
+    //printf("%d %d\n",gridRowSize,gridColSize);
+    for(i=0;i<gridRowSize;i++)
+    {
+        for(j=0;j<gridColSize;j++)
+        {
+            
+            if(grid[i][j]==1)
+            {
+                perimeter=perimeter+4;
+                if(i!=0&&grid[i-1][j]==1)
+                    perimeter--;
+                if(i!=gridRowSize-1&&grid[i+1][j]==1)
+                    perimeter--;
+                if(j!=0&&grid[i][j-1]==1)
+                    perimeter--;
+                if(j!=gridColSize-1&&grid[i][j+1]==1)
+                    perimeter--;
+                
+            }
+
+            //printf("%d %d %d\n",i,j,perimeter);
+        }
+    }
+    return perimeter;
+}
