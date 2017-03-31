@@ -1,0 +1,17 @@
+truct ListNode* reverseList(struct ListNode* head) {
+    struct ListNode* pre=NULL;
+    struct ListNode* node=NULL;
+    struct ListNode* nex=NULL;
+    
+    node=head;
+    while(node!=NULL)
+    {
+        nex=node->next;
+        node->next=pre;
+        pre=node;
+        //printf("%d %d %d\n",node->val,nex->val,pre->val);
+        node=nex;
+    }
+    return pre;
+    
+}
