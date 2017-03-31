@@ -1,0 +1,34 @@
+bool detectCapitalUse(char* word) {
+    int leng=strlen(word),i;
+    int answer=1;
+    if(leng<1) return true;
+    if(isupper(word[0]))
+    {
+        if(isupper(word[1]))
+        {
+            for(i=2;i<leng;i++)
+            {
+                if(!isupper(word[i]))
+                    return false;
+            }
+        }
+        else
+        {
+            for(i=2;i<leng;i++)
+            {
+                if(isupper(word[i]))
+                    return false;
+            }
+        }
+    }
+    else
+    {
+        for(i=1;i<leng;i++)
+        {
+            if(isupper(word[i]))
+                return false;
+        }
+    }
+    return true;
+    
+}
